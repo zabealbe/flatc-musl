@@ -4,7 +4,7 @@ git clone https://github.com/google/flatbuffers flatc && cd flatc
 VERSION=$(git describe --abbrev=0 --tags)
 
 
-CC="/usr/bin/x86_64-alpine-linux-musl-gcc -static -Os"
+CC="musl-gcc -static -Os"
 echo "Running CMAKE with CC=$CC"
 
 
