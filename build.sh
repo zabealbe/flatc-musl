@@ -9,7 +9,7 @@ echo "Running CMAKE with CC=$CC"
 
 
 cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
-cmake -DCMAKE_C_COMPILER="/usr/bin/x86_64-alpine-linux-musl-gcc" -DCMAKE_EXE_LINKER_FLAGS="-static -Os" .
+cmake -DCMAKE_C_COMPILER="musl-gcc" -DCMAKE_EXE_LINKER_FLAGS="-static -Os" .
 cmake --build .
 
 cd ../
