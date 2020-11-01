@@ -5,8 +5,9 @@ VERSION=$(git describe --abbrev=0 --tags)
 
 FILE=$OUTPUT_FOLDER/flatc_$VERSION
 
-if test -f "$FILE"; then
+if test -f "../$FILE"; then
 	echo "Version $VERSION already exists, please remove $FILE if you want to rebuild it!"
+	exit 0
 fi
 
 CC="/usr/lib/musl-gcc -static -Os"
