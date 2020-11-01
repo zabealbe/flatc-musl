@@ -4,12 +4,12 @@ git clone https://github.com/google/flatbuffers flatc && cd flatc
 VERSION=$(git describe --abbrev=0 --tags)
 
 
-CC="musl-gcc -static -Os"
+CC="/usr/lib/musl-gcc -static -Os"
 echo "Running CMAKE with CC=$CC"
 
 
 cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
-cmake -DCMAKE_C_COMPILER="/usr/lib/musl-gcc" -DCMAKE_EXE_LINKER_FLAGS="-static -Os" .
+cmake .
 cmake --build .
 
 cd ../
