@@ -24,5 +24,5 @@ jobs:
         git config --global user.name 'Automated build'
         git config --global user.email noreply@noone.com
         git add versions
-        git commit -m "Automatic build"
+        git diff-index --quiet HEAD || git commit -m "Automatic build"
         git push
