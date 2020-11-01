@@ -1,0 +1,23 @@
+# This is a basic workflow that is manually triggered
+
+name: Build with musl
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: run build script
+      run: |
+        chmod +x build.sh
+        ./build.sh
+    - name: commit built files
+      run: |
+        git add versions
+        git commit -m "Automatic build"
