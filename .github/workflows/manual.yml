@@ -23,3 +23,4 @@ jobs:
         git config --global user.email noreply@noone.com
         git add versions
         git commit -m "Automatic build"
+        git push
