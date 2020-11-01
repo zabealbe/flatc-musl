@@ -19,5 +19,7 @@ jobs:
         ./build.sh
     - name: commit built files
       run: |
+        git config --global user.name 'Automated build'
+        git config --global user.email noreply@noone.com
         git add versions
         git commit -m "Automatic build"
