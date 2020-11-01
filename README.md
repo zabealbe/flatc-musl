@@ -9,4 +9,4 @@ The resulting binary executable can be found under `versions/` directory with th
 
 :open_file_folder: project root\
   └ :open_file_folder: [versions](versions)\
-  &nbsp;&nbsp;&nbsp;└:gear: flatc_{version}
+  &nbsp;&nbsp;&nbsp;&nbsp;└:gear: flatc_{version}
