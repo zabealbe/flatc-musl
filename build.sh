@@ -9,7 +9,7 @@ echo "Running CMAKE with CC=$CC"
 
 
 cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
-cmake -DCMAKE_C_COMPILER="musl-gcc" -DCMAKE_EXE_LINKER_FLAGS="-static -Os" .
+cmake -DCMAKE_C_COMPILER="/usr/lib/musl-gcc" -DCMAKE_EXE_LINKER_FLAGS="-static -Os" .
 cmake --build .
 
 cd ../
