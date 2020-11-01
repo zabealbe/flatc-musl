@@ -5,7 +5,7 @@ VERSION=$(git describe --abbrev=0 --tags)
 
 FILE=$OUTPUT_FOLDER/flatc_$VERSION
 
-test -f "$FILE"; then
+if test -f "$FILE"; then
 	echo "Version $VERSION already exists, please remove $FILE if you want to rebuild it!"
 fi
 
