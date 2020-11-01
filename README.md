@@ -1,6 +1,8 @@
 # flatc-musl
 Flatc compiler script using musl
 
+This scripts builds flatc from the official flatbuffers' repo https://github.com/google/flatbuffers
+
 
 ## Automatic build with GitHub Actions
 Every Sunday a GitHub action will be triggered and the [flatbuffers repo](https://github.com/google/flatbuffers) will be checked for a newer version.
