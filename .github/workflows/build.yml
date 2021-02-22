@@ -11,18 +11,33 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  build-flatc:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: run build script
       run: |
         chmod +x build.sh
-        ./build.sh
+        ./build-flatc.sh
     - name: commit built files
       run: |
         git config --global user.name 'Automated build'
         git config --global user.email noreply@noone.com
         git add versions
-        git diff-index --quiet HEAD || git commit -m "Automatic build"
+        git diff-index --quiet HEAD || git commit -m "Automatic flatc build"
+        git push
+  build-flatcc:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: run build script
+      run: |
+        chmod +x build.sh
+        ./build-flatcc.sh
+    - name: commit built files
+      run: |
+        git config --global user.name 'Automated build'
+        git config --global user.email noreply@noone.com
+        git add versions
+        git diff-index --quiet HEAD || git commit -m "Automatic flatcc build"
         git push
