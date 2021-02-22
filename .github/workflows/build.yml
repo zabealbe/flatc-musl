@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: run build script
       run: |
-        chmod +x build.sh
+        chmod +x build-flatc.sh
         ./build-flatc.sh
     - name: commit built files
       run: |
@@ -32,7 +32,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: run build script
       run: |
-        chmod +x build.sh
+        chmod +x build-flatcc.sh
         ./build-flatcc.sh
     - name: commit built files
       run: |
