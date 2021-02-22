@@ -1,9 +1,9 @@
 OUTPUT_FOLDER="versions"
 
-git clone https://github.com/google/flatbuffers flatc && cd flatc
+git clone https://github.com/dvidelabs/flatcc.git flatcc && cd flatcc
 VERSION=$(git describe --abbrev=0 --tags)
 
-FILE=$OUTPUT_FOLDER/flatc_$VERSION
+FILE=$OUTPUT_FOLDER/flatcc_$VERSION
 
 if test -f "../$FILE"; then
 	echo "Version $VERSION already exists, please remove $FILE if you want to rebuild it!"
@@ -20,7 +20,7 @@ cmake --build .
 cd ../
 mkdir $OUTPUT_FOLDER
 
-mv flatc/flatc $FILE
+mv flatcc/bin/flatcc $FILE
 echo "Removing build folder.."
-rm -R flatc
-echo "Flatc version $VERSION compiled! Output file: $FILE"
+rm -R flatcc
+echo "FlatCC version $VERSION compiled! Output file: $FILE"
