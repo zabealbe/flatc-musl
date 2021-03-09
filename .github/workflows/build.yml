@@ -24,7 +24,7 @@ jobs:
         git config --global user.name 'Automated build'
         git config --global user.email noreply@noone.com
         git add versions
-        git diff-index --quiet HEAD || git commit -m "Automatic flatc build"
+        git diff-index --quiet HEAD versions || git commit -m "Automatic flatc build"
         git push
   build-flatcc:
     runs-on: ubuntu-latest
@@ -39,5 +39,5 @@ jobs:
         git config --global user.name 'Automated build'
         git config --global user.email noreply@noone.com
         git add versions
-        git diff-index --quiet HEAD || git commit -m "Automatic flatcc build"
+        git diff-index --quiet HEAD versions || git commit -m "Automatic flatcc build"
         git push
